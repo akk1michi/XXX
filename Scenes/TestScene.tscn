@@ -6,11 +6,21 @@
 [node name="Node2D" type="Node2D"]
 position = Vector2( 418.607, 386.08 )
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( -41.4725, -58.6487 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -458758, 10, 0, -393222, 10, 0, -327686, 10, 0, -262150, 10, 0, -196614, 10, 0, -131078, 10, 0, -65542, 10, 0, -6, 10, 0, 65530, 10, 0, 131067, 0, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0 )
+tile_data = PoolIntArray( 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1, 0, 131051, 1, 0, 131052, 1, 0, 131053, 1, 0, 131054, 1, 0, 131055, 1, 0, 131056, 1, 0, 131057, 1, 0, 131058, 1, 0, 131059, 1, 0, 131060, 1, 0, 131061, 1, 0, 131062, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( -41.4725, -58.6487 )
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -300
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
