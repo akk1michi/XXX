@@ -1,19 +1,31 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Characters/Player Character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World_Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/World_One-Way_Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Placeholder_Tiles_Objects/2 Background/Layers/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Placeholder_Tiles_Objects/2 Background/Layers/1.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 418.607, 386.08 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 2147483650
+format = 1
+tile_data = PoolIntArray( -65547, 4, 0, -65546, 4, 0, -65545, 4, 0, -65544, 4, 0, -65543, 4, 0, -65542, 4, 0, -65541, 4, 0, -65540, 4, 0, -65539, 4, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1, 0, 131051, 1, 0, 131052, 1, 0, 131053, 1, 0, 131054, 1, 0, 131055, 1, 0, 131056, 1, 0, 131057, 1, 0, 131058, 1, 0, 131059, 1, 0, 131060, 1, 0, 131061, 1, 0, 131062, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0 )
+tile_data = PoolIntArray( -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -131069, 22, 0, -131068, 22, 0, -131067, 22, 0, -131066, 1, 0, -131065, 22, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 1, 0, -131049, 1, 0, -131048, 1, 0, -131047, 1, 0, -131046, 1, 0, -131045, 1, 0, -131044, 1, 0, -131043, 1, 0, -131042, 1, 0, -131041, 1, 0, -131040, 1, 0, -131039, 1, 0, -131038, 1, 0, -131037, 1, 0, -131036, 1, 0, -131035, 1, 0, -131034, 1, 0, -131033, 1, 0, -131032, 1, 0, -131031, 1, 0, -131030, 1, 0, -131029, 1, 0, -131028, 1, 0, -131027, 1, 0, -131026, 55, 0, -65489, 55, 0, 48, 55, 0, 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1, 0, 131051, 1, 0, 131052, 1, 0, 131053, 1, 0, 131054, 1, 0, 131055, 1, 0, 131056, 1, 0, 131057, 1, 0, 131058, 1, 0, 131059, 1, 0, 131060, 1, 0, 131061, 1, 0, 131062, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0, 65585, 55, 0, 131122, 55, 0, 196659, 55, 0, 262196, 28, 0, 262197, 28, 0, 262198, 28, 0, 262199, 28, 0, 262200, 28, 0, 262201, 28, 0, 262202, 28, 0 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( -41.4725, -58.6487 )
+collision_mask = 2147483651
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 current = true
@@ -22,5 +34,26 @@ limit_left = -300
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.3
+drag_margin_top = 0.3
 drag_margin_right = 0.3
+drag_margin_bottom = 0.3
 editor_draw_limits = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.6 )
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
