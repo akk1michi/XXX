@@ -41,6 +41,15 @@ Down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Character"
+2d_physics/layer_2="Platform"
+2d_physics/layer_3="OW_Platform"
+2d_physics/layer_4="Fallzone"
+2d_physics/layer_5="Item"
+2d_physics/layer_6="Enemy"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

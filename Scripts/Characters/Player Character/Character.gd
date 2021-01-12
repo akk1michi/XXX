@@ -20,9 +20,9 @@ func _physics_process(delta):
 		$AnimatedSprite.play("Idle_Left")
 	
 	if Input.is_action_pressed("Down"):
-		set_collision_mask_bit(1,false)
+		set_collision_mask_bit(2,false)
 	else:
-		set_collision_mask_bit(1,true)
+		set_collision_mask_bit(2,true)
 		
 		
 	velocity.y+=gravity
@@ -32,3 +32,7 @@ func _physics_process(delta):
 	#if is_on_floor()
 		#velocity.y+=gravity
 	velocity.x=lerp(velocity.x,0,0.2)
+
+
+func _on_Fallzone_body_entered(body):
+	get_tree().reload_current_scene()
