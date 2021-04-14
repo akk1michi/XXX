@@ -1,11 +1,154 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://Animations/Characters/Player Character/Character.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Characters/Player Character/Character.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_6.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_6.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_4.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_5.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Left_2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Idle_Right_6.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_4.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_2.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_6.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_5.png" type="Texture" id=25]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.3812
 height = 23.143
+
+[sub_resource type="Animation" id=15]
+resource_name = "Fall_Left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ), ExtResource( 17 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle_Left"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 29.8571, 1, 0.466516, 2, 2.14355 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle_Right"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 2.2974, 87.4266, 0.594604, 0.203063, 2.21914, 2.82843 ),
+"update": 1,
+"values": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 19 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Run_Left"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1.41421, 1, 1, 1.46409, 2, 3.4822 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 7 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Run_Right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.554785, 1, 0.68302, 3.36359, 5.46416, 3.4822 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 25 ), ExtResource( 23 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=8]
+blend_point_0/node = SubResource( 6 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 7 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Run_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Run_Right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=11]
+blend_point_0/node = SubResource( 9 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 10 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachine" id=12]
+states/Idle/node = SubResource( 8 )
+states/Idle/position = Vector2( 244, 73 )
+states/Run/node = SubResource( 11 )
+states/Run/position = Vector2( 543, 132 )
+transitions = [ "Run", "Idle", SubResource( 14 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="Character" type="KinematicBody2D"]
 position = Vector2( 1, 0 )
@@ -15,11 +158,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = ExtResource( 1 )
-animation = "Jump_Right"
-offset = Vector2( 0, 5 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 2.372 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.707901, 3.77549 )
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fall_Left = SubResource( 15 )
+anims/Idle_Left = SubResource( 2 )
+anims/Idle_Right = SubResource( 3 )
+anims/Run_Left = SubResource( 4 )
+anims/Run_Right = SubResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 12 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 13 )
+parameters/Idle/blend_position = 0
+parameters/Run/blend_position = 0

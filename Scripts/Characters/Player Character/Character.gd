@@ -4,20 +4,29 @@ const maxspeed=200
 var gravity=30
 var jumpForce=600
 var velocity=Vector2(0,0)
+var input_x=1
 var face=true
 func _physics_process(delta):
 	if Input.is_action_pressed("Right"):
 		face=true
 		velocity.x=maxspeed
-		$AnimatedSprite.play("Run_Right")
+		input_x=1
+		$AnimationTree.set("parameters/Idle/blend_position",input_x)
+		$AnimationTree.set("parameters/Run/blend_position",input_x)
+		$AnimationTree.get("parameters/playback").travel("Run")
 	elif Input.is_action_pressed("Left"):
 		face=false
 		velocity.x=-maxspeed
-		$AnimatedSprite.play("Run_Left")
-	elif face==true:
-		$AnimatedSprite.play("Idle_Right")
+		input_x=-1
+		$AnimationTree.set("parameters/Idle/blend_position",input_x)
+		$AnimationTree.set("parameters/Run/blend_position",input_x)
+		$AnimationTree.get("parameters/playback").travel("Run")
 	else:
-		$AnimatedSprite.play("Idle_Left")
+		$AnimationTree.get("parameters/playback").travel("Idle")
+#	elif face==true:
+#		$AnimationPlayer.play("Idle_Right")
+#	else:
+#		$AnimationPlayer.play("Idle_Left")
 	
 	if Input.is_action_pressed("Down"):
 		set_collision_mask_bit(2,false)

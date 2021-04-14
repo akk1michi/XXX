@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump_slide_tileset.png-d13193554883311caa97cf4b2f755afa.stex"
+path="res://.import/jump_slide_tileset.png-c1a7faf84999535467aa01066ccb1689.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/jump_slide_tileset.png"
-dest_files=[ "res://.import/jump_slide_tileset.png-d13193554883311caa97cf4b2f755afa.stex" ]
+source_file="res://Assets/New Assets/jump_slide_tileset.png"
+dest_files=[ "res://.import/jump_slide_tileset.png-c1a7faf84999535467aa01066ccb1689.stex" ]
 
 [params]
 
