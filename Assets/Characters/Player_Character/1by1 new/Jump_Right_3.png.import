@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/font.png-083726a2f9a99f38a0e9818acbbd7175.stex"
+path="res://.import/Jump_Right_3.png-44c3498c02265814fa61f496510760ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu Assets/font.png"
-dest_files=[ "res://.import/font.png-083726a2f9a99f38a0e9818acbbd7175.stex" ]
+source_file="res://Assets/Characters/Player_Character/1by1 new/Jump_Right_3.png"
+dest_files=[ "res://.import/Jump_Right_3.png-44c3498c02265814fa61f496510760ae.stex" ]
 
 [params]
 
