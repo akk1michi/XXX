@@ -55,7 +55,7 @@ func _physics_process(delta):
 		can_jump=false
 	
 		
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_pressed("Jump"):
 		if can_jump==true:
 			velocity.y=-jumpForce
 #			if is_on_wall() && Input.is_action_pressed("Right"):
@@ -65,6 +65,7 @@ func _physics_process(delta):
 #				wall_jump=false
 #				velocity.x=maxspeed+300
 				
+		
 		
 #	if Input.is_action_pressed("Jump") and is_on_floor(): #hold down jump to repeatedly jump, feels nicer to platform
 #		velocity.y=-jumpForce  
