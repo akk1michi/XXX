@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Prefabs/Characters/Player Character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World_Tileset.tres" type="TileSet" id=2]
@@ -9,17 +9,13 @@
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Willows/3.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/9.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/7.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Ladders/4.png" type="Texture" id=10]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Ridges/4.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Willows/2.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Pointers/1.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Ladders/3.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Boxes/3.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/5.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Ladders/5.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Boxes/4.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/8.png" type="Texture" id=21]
 
 [sub_resource type="TileSet" id=1]
@@ -27,7 +23,7 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1502.32, 51.5033 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 position = Vector2( 418.607, 386.08 )
 
 [node name="TileMap No Collision" type="TileMap" parent="."]
@@ -37,15 +33,17 @@ collision_friction = 0.0
 collision_layer = 2147483648
 collision_mask = 2147483648
 format = 1
-tile_data = PoolIntArray( -589814, 61, 0 )
+tile_data = PoolIntArray( -983050, 9, 0, -917520, 9, 0, -917519, 9, 0, -917518, 9, 0, -917516, 9, 0, -917515, 9, 0, -917514, 9, 0, -851985, 9, 0, -851984, 9, 0, -851983, 9, 0, -851982, 9, 0, -851981, 9, 0, -851980, 9, 0, -851979, 9, 0, -786450, 9, 0, -786447, 9, 0, -786446, 9, 0, -786445, 9, 0, -786444, 9, 0, -786443, 9, 0, -786442, 9, 0, -720914, 9, 0, -720913, 9, 0, -720912, 9, 0, -720911, 9, 0, -720910, 9, 0, -720909, 9, 0, -720908, 9, 0, -720907, 9, 0, -655379, 9, 0, -655378, 9, 0, -655377, 9, 0, -655376, 9, 0, -655375, 9, 0, -655374, 9, 0, -655373, 9, 0, -655372, 9, 0, -655371, 9, 0, -589844, 9, 0, -589843, 9, 0, -589842, 9, 0, -589841, 9, 0, -589840, 9, 0, -589839, 9, 0, -589838, 9, 0, -589837, 9, 0, -589836, 9, 0, -524306, 9, 0, -524305, 9, 0, -524304, 9, 0, -524303, 9, 0, -524302, 9, 0, -524301, 9, 0, -589814, 61, 0, -458771, 9, 0, -458770, 9, 0, -458769, 9, 0, -458768, 9, 0, -458767, 9, 0, -458766, 9, 0, -458765, 9, 0, -393235, 9, 0, -393234, 9, 0, -393233, 9, 0, -393232, 9, 0, -393231, 9, 0, -393230, 9, 0, -327699, 9, 0, -327698, 9, 0, -327697, 9, 0, -327696, 9, 0, -327695, 9, 0, -327694, 9, 0, -262163, 9, 0, -262162, 9, 0, -262161, 9, 0, -262160, 9, 0, -262159, 9, 0, -262158, 9, 0, -196627, 9, 0, -196626, 9, 0, -196625, 9, 0, -196624, 9, 0, -196623, 9, 0, -196622, 9, 0, -131090, 9, 0, -131089, 9, 0, -131088, 9, 0, -131087, 9, 0, -131086, 9, 0, -131085, 9, 0, -65554, 9, 0, -65553, 9, 0, -65552, 9, 0, -65551, 9, 0, -65550, 9, 0, -65549, 9, 0, -65548, 9, 0, -18, 9, 0, -17, 9, 0, -16, 9, 0, -15, 9, 0, -14, 9, 0, -13, 9, 0, -12, 9, 0, 65518, 9, 0, 65520, 9, 0, 65521, 9, 0, 65522, 9, 0, 65523, 9, 0, 65524, 9, 0, 65525, 9, 0, 131054, 9, 0, 131055, 9, 0, 131056, 9, 0, 131057, 9, 0, 131061, 9, 0, 131062, 9, 0, 196590, 9, 0, 196591, 9, 0 )
+
+[node name="Item placements" type="TileMap" parent="."]
+format = 1
 
 [node name="Textures" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource( 1 )
 format = 1
 
 [node name="9" type="Sprite" parent="Textures"]
-position = Vector2( 285.469, -108.292 )
+position = Vector2( 275.367, 20.7912 )
 texture = ExtResource( 8 )
 
 [node name="8" type="Sprite" parent="Textures"]
@@ -65,31 +63,23 @@ position = Vector2( 881.159, 25.7994 )
 texture = ExtResource( 12 )
 
 [node name="13" type="Sprite" parent="Textures"]
-position = Vector2( 934.187, 19.9131 )
+position = Vector2( 950.061, 54.0422 )
 texture = ExtResource( 21 )
 
 [node name="14" type="Sprite" parent="Textures"]
-position = Vector2( 722.127, -99.4942 )
+position = Vector2( 607.228, 59.1939 )
 texture = ExtResource( 15 )
 
-[node name="15" type="Sprite" parent="Textures"]
-position = Vector2( 1644.59, -12.8819 )
-texture = ExtResource( 20 )
-
-[node name="16" type="Sprite" parent="Textures"]
-position = Vector2( 1549.3, -269.484 )
-texture = ExtResource( 17 )
-
 [node name="17" type="Sprite" parent="Textures"]
-position = Vector2( 478.435, -125.617 )
+position = Vector2( 1137.21, 36.2979 )
 texture = ExtResource( 11 )
 
 [node name="1" type="Sprite" parent="Textures"]
-position = Vector2( 23.6914, -41.6891 )
+position = Vector2( 83.3781, 22.8787 )
 texture = ExtResource( 14 )
 
 [node name="4" type="Sprite" parent="Textures"]
-position = Vector2( 977.636, -122.08 )
+position = Vector2( 876.073, -84.6622 )
 scale = Vector2( 1.84156, 1.85008 )
 texture = ExtResource( 13 )
 
@@ -100,21 +90,9 @@ texture = ExtResource( 7 )
 flip_h = true
 
 [node name="2" type="Sprite" parent="Textures"]
-position = Vector2( 253.636, -139.08 )
+position = Vector2( 148.125, -71.7323 )
 scale = Vector2( 1.53846, 1.53333 )
 texture = ExtResource( 6 )
-
-[node name="5" type="Sprite" parent="Textures"]
-position = Vector2( 603.446, 49.0049 )
-texture = ExtResource( 10 )
-
-[node name="6" type="Sprite" parent="Textures"]
-position = Vector2( 603.446, 18.1368 )
-texture = ExtResource( 16 )
-
-[node name="7" type="Sprite" parent="Textures"]
-position = Vector2( 603.446, -12.1013 )
-texture = ExtResource( 19 )
 
 [node name="TileMap One-Way" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -122,7 +100,7 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 4
 collision_mask = 2147483648
 format = 1
-tile_data = PoolIntArray( -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 0, 0, 131084, 1, 0, 131085, 5, 0, 131090, 4, 0, 131091, 0, 0, 131095, 2, 0 )
+tile_data = PoolIntArray( -5, 1, 0, -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 0, 0, 65544, 4, 0, 65545, 4, 0, 65546, 0, 0, 131084, 1, 0, 131085, 5, 0, 131090, 4, 0, 131091, 0, 0, 131095, 2, 0 )
 
 [node name="TileMap Collision" type="TileMap" parent="."]
 position = Vector2( 17, 0 )
@@ -135,6 +113,7 @@ tile_data = PoolIntArray( -6029010, -1073741815, 0, -5963474, -1073741815, 0, -5
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( -41.472, -50.649 )
+collision_mask = 63
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 offset = Vector2( 49.675, 0 )
@@ -153,28 +132,37 @@ editor_draw_limits = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_mirroring = Vector2( 1152, 0 )
 
 [node name="6" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 position = Vector2( 2.77185, -185.444 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.6, 0.6 )
 motion_mirroring = Vector2( 1152, 0 )
 
 [node name="3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+visible = false
 position = Vector2( 582.35, 115.108 )
 scale = Vector2( 2.01494, 1.83217 )
 texture = ExtResource( 4 )
 
 [node name="Fallzone" type="Area2D" parent="."]
+visible = false
 position = Vector2( 743.276, 244.196 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone"]
+visible = false
 position = Vector2( 49.1101, 33.7463 )
 shape = SubResource( 2 )
+
+[node name="Coin" parent="." instance=ExtResource( 10 )]
+position = Vector2( 206.356, -1.70095 )
 [connection signal="body_entered" from="Fallzone" to="Character" method="_on_Fallzone_body_entered"]

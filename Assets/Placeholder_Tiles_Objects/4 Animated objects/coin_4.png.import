@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4779582-pixel-coin-png-png-collections-at-sccprecat-pixel-coin-png-1800_1900_preview.png-c226a1ba24163d1383d6e6a487a06009.stex"
+path="res://.import/coin_4.png-b892e3db0647fffac57df97b9076dcf7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Temp/4779582-pixel-coin-png-png-collections-at-sccprecat-pixel-coin-png-1800_1900_preview.png"
-dest_files=[ "res://.import/4779582-pixel-coin-png-png-collections-at-sccprecat-pixel-coin-png-1800_1900_preview.png-c226a1ba24163d1383d6e6a487a06009.stex" ]
+source_file="res://Assets/Placeholder_Tiles_Objects/4 Animated objects/coin_4.png"
+dest_files=[ "res://.import/coin_4.png-b892e3db0647fffac57df97b9076dcf7.stex" ]
 
 [params]
 
