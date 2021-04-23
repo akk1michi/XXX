@@ -305,7 +305,7 @@ graph_offset = Vector2( -172, 34 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
 [node name="Character" type="KinematicBody2D"]
-position = Vector2( 1, 0 )
+position = Vector2( 0.250847, -1.12373 )
 collision_mask = 62
 script = ExtResource( 2 )
 __meta__ = {
