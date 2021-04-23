@@ -40,7 +40,7 @@
 [ext_resource path="res://Assets/Characters/Player_Character/1by1 new/Wall_Left_3.png" type="Texture" id=38]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 16.7486
+radius = 14.5636
 height = 23.143
 
 [sub_resource type="Animation" id=2]
