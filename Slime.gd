@@ -35,13 +35,7 @@ func _on_Attack_check_body_entered(body):
 	$Attack_check.set_collision_layer_bit(0,false)
 	$Sides_check.set_collision_mask_bit(0,false)
 	$Timer.start()
-	body.bounce()
 
 func _on_Sides_check_body_entered(body):
 		print("Got it!")
-		body.hit(position.x)
-		#get_tree().change_scene("res://Scenes/Lvl1.tscn")
-
-
-func _on_Timer_timeout():
-	queue_free()
+		get_tree().change_scene("res://Scenes/Lvl1.tscn")
