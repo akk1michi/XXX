@@ -16,20 +16,15 @@ var velocity=Vector2(0,0)
 var input_x=1
 var face=true
 func _physics_process(delta):
-	if Input.is_action_pressed("Right"):
-		face=true
-		velocity.x=maxspeed
-		input_x=1
+	
+	if velocity.x>0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
 		$AnimationTree.get("parameters/playback").travel("Run")
-	elif Input.is_action_pressed("Left"):
-		face=false
-		velocity.x=-maxspeed
-		input_x=-1
+	elif velocity.x<0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
@@ -38,6 +33,20 @@ func _physics_process(delta):
 		$AnimationTree.get("parameters/playback").travel("Run")
 	else:
 		$AnimationTree.get("parameters/playback").travel("Idle")
+	if Input.is_action_pressed("Right"):
+		face=true
+		velocity.x=maxspeed
+		input_x=1
+		
+	elif Input.is_action_pressed("Left"):
+		face=false
+		velocity.x=-maxspeed
+		input_x=-1
+		
+	
+	
+			
+	
 #	elif face==true:
 #		$AnimationPlayer.play("Idle_Right")
 #	else:
@@ -49,22 +58,19 @@ func _physics_process(delta):
 		set_collision_mask_bit(2,true)
 	if !is_on_floor():
 		$AnimationTree.get("parameters/playback").travel("JumpLoop")
-	if is_on_floor():
-		can_jump=true
-		wall_jump=true
-	elif !(is_on_floor()||is_on_wall()):
-		can_jump=false
-	
 		
-	if Input.is_action_pressed("Jump"):
-		if can_jump==true:
+	if Input.is_action_pressed("Jump")&&is_on_floor()&&!is_on_wall():
 			velocity.y=-jumpForce
-#			if is_on_wall() && Input.is_action_pressed("Right"):
-#				wall_jump=false
-#				velocity.x=-(maxspeed+300)
-#			elif is_on_wall() && Input.is_action_pressed("Left"):
-#				wall_jump=false
-#				velocity.x=maxspeed+300
+			
+	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		velocity.y=-jumpForce
+		velocity.x=-(maxspeed+500)
+		Input.action_release("Right")
+	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		velocity.y=-jumpForce
+		velocity.x=maxspeed+500
+		Input.action_release("Left")
+		
 				
 		
 		
