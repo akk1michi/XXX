@@ -62,5 +62,9 @@ collision_layer = 0
 [node name="Hitbox" type="CollisionShape2D" parent="Sides_check"]
 position = Vector2( 0.33371, -2.00226 )
 shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 [connection signal="body_entered" from="Attack_check" to="." method="_on_Attack_check_body_entered"]
 [connection signal="body_entered" from="Sides_check" to="." method="_on_Sides_check_body_entered"]

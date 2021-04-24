@@ -34,7 +34,7 @@ func _on_Attack_check_body_entered(body):
 	set_collision_mask_bit(5,false)
 	$Attack_check.set_collision_layer_bit(0,false)
 	$Sides_check.set_collision_mask_bit(0,false)
-	
+	$Timer.start()
 
 func _on_Sides_check_body_entered(body):
 		print("Got it!")
