@@ -1,19 +1,20 @@
 extends Area2D
 
 onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-
-func _ready():
-	pass 
+signal coin_collected
 
 
 
 func _on_Coin_body_entered(body):
-	anim_player.play("fade")
+	$AnimationPlayer.play("fade")
 	body.add_coin()
+	emit_signal("coin_collected")
+	set_collision_mask_bit(0,0) #disable mask for no double coin pickup
 	
-	pass 
+	
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	queue_free()

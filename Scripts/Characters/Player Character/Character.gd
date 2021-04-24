@@ -46,8 +46,7 @@ func _physics_process(delta):
 #		$AnimationPlayer.play("Idle_Left")
 
 	
-	#if coins==2:
-	#	get_tree().change_scene("res://screen1.tscn")
+	
 	
 	#One way platform behaviour
 	if Input.is_action_pressed("Down"):
@@ -101,6 +100,6 @@ func _on_Fallzone_body_entered(body):
 	
 #Coin score
 func add_coin():
-	coins=coins+10
-	
+	coins=coins+1
+
 
