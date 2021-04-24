@@ -91,18 +91,33 @@ func _physics_process(delta):
 
 
 
+	#fallzone
 func _on_Fallzone_body_entered(body):
 	get_tree().reload_current_scene()
 
+#bounce after kill
+func bounce():
+	velocity.y=-jumpForce*0.6
+	Input.action_release("Jump")
+	
+	
 
-#func _on_Finish_body_entered(body):
-#	get_tree().change_scene("res://Scenes/Lvl1.tscn")
-
-
+#coin
 func add_coin():
 	coins=coins+1
-	
-	
-	
-	
+
+#hit
+func hit(var eposx):
+	$Timer.start()
+	set_modulate(Color(1,0.2,0.2,0.3))
+	velocity.y=-jumpForce*0.6
+	if position.x<eposx:
+		velocity.x=-800
+	elif position.x>eposx:
+		velocity.x=900
+	Input.action_release("Left")
+	Input.action_release("Right")
+	#Subtract health amount before timer ends
+func _on_Timer_timeout():
+	set_modulate(Color(1,1,1,1))
 	
