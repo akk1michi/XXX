@@ -1,4 +1,8 @@
 extends KinematicBody2D
+
+
+var coins=0
+
 var speed
 const maxspeed=200
 var gravity=30
@@ -6,8 +10,6 @@ var jumpForce=600
 var wall_direction=1
 var can_jump=false
 var wall_jump=true
-
-var coins = 0
 
 onready var left_wall_raycasts=$WallRaycasts/LeftWallRaycasts
 onready var right_wall_raycasts=$WallRaycasts/RightWallRaycasts
@@ -17,7 +19,6 @@ var velocity=Vector2(0,0)
 var input_x=1
 var face=true
 func _physics_process(delta):
-	
 	if Input.is_action_pressed("Right"):
 		face=true
 		velocity.x=maxspeed
@@ -44,17 +45,11 @@ func _physics_process(delta):
 #		$AnimationPlayer.play("Idle_Right")
 #	else:
 #		$AnimationPlayer.play("Idle_Left")
-
 	
-	
-	
-	#One way platform behaviour
 	if Input.is_action_pressed("Down"):
 		set_collision_mask_bit(2,false)
 	else:
 		set_collision_mask_bit(2,true)
-		
-	#Jump behaviour
 	if !is_on_floor():
 		$AnimationTree.get("parameters/playback").travel("JumpStart")
 	if is_on_floor():
@@ -63,8 +58,7 @@ func _physics_process(delta):
 	elif !(is_on_floor()||is_on_wall()):
 		can_jump=false
 	
-	
-#Jumping behaviour	
+		
 	if Input.is_action_pressed("Jump"):
 		if can_jump==true:
 			velocity.y=-jumpForce
@@ -92,14 +86,23 @@ func _physics_process(delta):
 			velocity.y+=gravity
 	else:
 			velocity.y+=gravity	
+	
 
 
-#Falzone behaviour
+
+
 func _on_Fallzone_body_entered(body):
 	get_tree().reload_current_scene()
-	
-#Coin score
+
+
+#func _on_Finish_body_entered(body):
+#	get_tree().change_scene("res://Scenes/Lvl1.tscn")
+
+
 func add_coin():
 	coins=coins+1
-
-
+	
+	
+	
+	
+	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset_darker.png-3a995046f919376d2b20d730dd530ccc.stex"
+path="res://.import/enemy_3.png-a806eaa48114857e7025fee98fb7a13a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tileset_darker.png"
-dest_files=[ "res://.import/Tileset_darker.png-3a995046f919376d2b20d730dd530ccc.stex" ]
+source_file="res://Assets/Characters/enemy_3.png"
+dest_files=[ "res://.import/enemy_3.png-a806eaa48114857e7025fee98fb7a13a.stex" ]
 
 [params]
 
