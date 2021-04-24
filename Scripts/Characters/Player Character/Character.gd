@@ -11,9 +11,6 @@ var wall_direction=1
 var can_jump=false
 var wall_jump=true
 
-onready var left_wall_raycasts=$WallRaycasts/LeftWallRaycasts
-onready var right_wall_raycasts=$WallRaycasts/RightWallRaycasts
-
 
 var velocity=Vector2(0,0)
 var input_x=1
@@ -51,7 +48,7 @@ func _physics_process(delta):
 	else:
 		set_collision_mask_bit(2,true)
 	if !is_on_floor():
-		$AnimationTree.get("parameters/playback").travel("JumpStart")
+		$AnimationTree.get("parameters/playback").travel("JumpLoop")
 	if is_on_floor():
 		can_jump=true
 		wall_jump=true
@@ -118,6 +115,7 @@ func hit(var eposx):
 	Input.action_release("Left")
 	Input.action_release("Right")
 	#Subtract health amount before timer ends
+	
 func _on_Timer_timeout():
 	set_modulate(Color(1,1,1,1))
 	

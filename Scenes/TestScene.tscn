@@ -81,7 +81,7 @@ __meta__ = {
 position = Vector2( 31.519, 35.0212 )
 scale = Vector2( 2.5892, 2.66114 )
 frames = SubResource( 2 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="X" type="Label" parent="HUD"]

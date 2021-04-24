@@ -113,7 +113,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "JumpStart_Left"
-length = 0.2
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -129,7 +129,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "JumpStart_Right"
-length = 0.2
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -291,13 +291,13 @@ auto_advance = true
 states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 242, 80 )
 states/JumpLoop/node = SubResource( 17 )
-states/JumpLoop/position = Vector2( 273, 242 )
+states/JumpLoop/position = Vector2( 175, 346 )
 states/JumpStart/node = SubResource( 20 )
-states/JumpStart/position = Vector2( 103, 158 )
+states/JumpStart/position = Vector2( 70, 163 )
 states/Run/node = SubResource( 23 )
 states/Run/position = Vector2( 404, 101 )
 states/Wall/node = SubResource( 26 )
-states/Wall/position = Vector2( 489, 185 )
+states/Wall/position = Vector2( 580, 267 )
 transitions = [ "Run", "Idle", SubResource( 27 ), "Idle", "JumpStart", SubResource( 28 ), "Run", "JumpStart", SubResource( 29 ), "JumpStart", "JumpLoop", SubResource( 30 ), "JumpStart", "Wall", SubResource( 31 ), "Wall", "JumpLoop", SubResource( 32 ), "JumpLoop", "Wall", SubResource( 33 ), "Run", "Wall", SubResource( 34 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -172, 34 )
@@ -315,7 +315,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 3.247 )
 scale = Vector2( 1, 1.03241 )
-texture = ExtResource( 17 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.707901, 3.77549 )
@@ -341,7 +341,7 @@ parameters/playback = SubResource( 36 )
 parameters/Idle/blend_position = 0
 parameters/JumpLoop/blend_position = 0
 parameters/JumpStart/blend_position = 0
-parameters/Run/blend_position = 0
+parameters/Run/blend_position = -0.0131681
 parameters/Wall/blend_position = -1.01564
 
 [node name="Timer" type="Timer" parent="."]
