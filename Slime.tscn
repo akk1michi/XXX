@@ -35,7 +35,6 @@ script = ExtResource( 3 )
 position = Vector2( 0, -8 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -64,7 +63,8 @@ position = Vector2( 0.33371, -2.00226 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.5
 one_shot = true
 [connection signal="body_entered" from="Attack_check" to="." method="_on_Attack_check_body_entered"]
 [connection signal="body_entered" from="Sides_check" to="." method="_on_Sides_check_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
