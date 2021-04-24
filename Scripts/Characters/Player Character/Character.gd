@@ -1,8 +1,4 @@
 extends KinematicBody2D
-
-
-var coins=0
-
 var speed
 const maxspeed=200
 var gravity=30
@@ -87,22 +83,10 @@ func _physics_process(delta):
 	else:
 			velocity.y+=gravity	
 	
+	
 
 
 
 
 func _on_Fallzone_body_entered(body):
 	get_tree().reload_current_scene()
-
-
-#func _on_Finish_body_entered(body):
-#	get_tree().change_scene("res://Scenes/Lvl1.tscn")
-
-
-func add_coin():
-	coins=coins+1
-	
-	
-	
-	
-	

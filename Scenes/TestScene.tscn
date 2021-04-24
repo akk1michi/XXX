@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Prefabs/Characters/Player Character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World_Tileset.tres" type="TileSet" id=2]
@@ -21,24 +21,11 @@
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Ladders/5.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Boxes/4.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Bushes/8.png" type="Texture" id=21]
-[ext_resource path="res://Prefabs/Objects/Coin.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Temp/4779582-pixel-coin-png-png-collections-at-sccprecat-pixel-coin-png-1800_1900_preview.png" type="Texture" id=23]
-[ext_resource path="res://Scripts/HUD.gd" type="Script" id=24]
 
 [sub_resource type="TileSet" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6409.3, 51.5033 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 43.3907, 72.7971 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.596078, 0.564706, 0.466667, 0.294118 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 418.607, 386.08 )
@@ -168,7 +155,7 @@ editor_draw_limits = true
 motion_mirroring = Vector2( 1152, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 62.0304, 27.714 )
+position = Vector2( 62.625, 27.714 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 centered = false
@@ -178,7 +165,7 @@ motion_scale = Vector2( 0.6, 0.6 )
 motion_mirroring = Vector2( 1152, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( -128, -64 )
+position = Vector2( -125.326, -71.8605 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 centered = false
@@ -190,68 +177,4 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone"]
 position = Vector2( 5178.22, 27.0428 )
 shape = SubResource( 2 )
-
-[node name="Finish" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2( 1053.93, -10.6274 )
-shape = SubResource( 3 )
-
-[node name="Coins" type="Node2D" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource( 22 )]
-position = Vector2( 93.393, -2.07999 )
-
-[node name="Coin2" parent="Coins" instance=ExtResource( 22 )]
-position = Vector2( 125.393, -2.07999 )
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 22 )]
-position = Vector2( 253.393, -2.07999 )
-
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 24 )
-
-[node name="Panel" type="Panel" parent="HUD"]
-margin_left = 21.9444
-margin_top = 16.9181
-margin_right = 127.944
-margin_bottom = 56.9181
-custom_styles/panel = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Panel"]
-margin_left = 5.3056
-margin_top = 9.83193
-margin_right = 25.3056
-margin_bottom = 30.8319
-texture = ExtResource( 23 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HUD/Panel"]
-margin_left = 28.5
-margin_top = 15.25
-margin_right = 38.5
-margin_bottom = 29.25
-text = "X"
-
-[node name="Coins" type="Label" parent="HUD/Panel"]
-margin_left = 39.6716
-margin_top = 11.3713
-margin_right = 98.6716
-margin_bottom = 33.3713
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="body_entered" from="Fallzone" to="Character" method="_on_Fallzone_body_entered"]
-[connection signal="body_entered" from="Finish" to="Character" method="_on_Finish_body_entered"]
-[connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
