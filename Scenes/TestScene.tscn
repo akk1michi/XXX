@@ -165,4 +165,7 @@ shape = SubResource( 2 )
 
 [node name="Coin" parent="." instance=ExtResource( 10 )]
 position = Vector2( 206.356, -1.70095 )
+
+[node name="Coin" parent="Coin" instance=ExtResource( 10 )]
+position = Vector2( -61.1012, -0.0665894 )
 [connection signal="body_entered" from="Fallzone" to="Character" method="_on_Fallzone_body_entered"]
