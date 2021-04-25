@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var coins=0
-var health = 3
+onready var health = 6
 
 var speed
 const maxspeed=200
@@ -18,32 +18,32 @@ var velocity=Vector2(0,0)
 var input_x=1
 var face=true
 func _physics_process(delta):
-	
 	if velocity.x>0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
-		$AnimationTree.get("parameters/playback").travel("Run")
 	elif velocity.x<0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
-		$AnimationTree.get("parameters/playback").travel("Run")
-	else:
-		$AnimationTree.get("parameters/playback").travel("Idle")
+		
+	
 	if Input.is_action_pressed("Right"):
+		$AnimationTree.get("parameters/playback").travel("Run")
 		face=true
 		velocity.x=maxspeed
 		input_x=1
-		
 	elif Input.is_action_pressed("Left"):
+		$AnimationTree.get("parameters/playback").travel("Run")
 		face=false
 		velocity.x=-maxspeed
 		input_x=-1
+	else:
+		$AnimationTree.get("parameters/playback").travel("Idle")
 		
 	
 	
@@ -61,7 +61,7 @@ func _physics_process(delta):
 	if !is_on_floor():
 		$AnimationTree.get("parameters/playback").travel("JumpLoop")
 		
-	if Input.is_action_pressed("Jump")&&is_on_floor()&&!is_on_wall():
+	if Input.is_action_pressed("Jump")&&is_on_floor():
 			velocity.y=-jumpForce
 			
 	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):

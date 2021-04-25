@@ -81,6 +81,7 @@ __meta__ = {
 position = Vector2( 31.519, 35.0212 )
 scale = Vector2( 2.5892, 2.66114 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="X" type="Label" parent="HUD"]
@@ -102,6 +103,15 @@ margin_bottom = 57.5297
 custom_fonts/font = SubResource( 4 )
 text = "1234"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="HUD"]
+margin_left = 205.0
+margin_top = 14.0
+margin_right = 334.0
+margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
