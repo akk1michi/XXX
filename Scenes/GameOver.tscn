@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Menu Assets/Lightmorning.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 2
+outline_color = Color( 0.976471, 0.270588, 0.054902, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 3.0
+margin_top = -0.334839
+margin_right = 1023.0
+margin_bottom = 596.665
+color = Color( 0.215686, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 112.0
+margin_right = 864.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.545098, 0.529412, 0, 1 )
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 360.0
+margin_top = 304.0
+margin_right = 664.0
+margin_bottom = 376.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 360.0
+margin_top = 424.0
+margin_right = 664.0
+margin_bottom = 496.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 288.0
+margin_right = 720.0
+margin_bottom = 388.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.239216, 0.235294, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Try again"
+flat = true
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackToMenu" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 408.0
+margin_right = 720.0
+margin_bottom = 508.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.239216, 0.235294, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Back to menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TryAgain" to="TryAgain" method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]

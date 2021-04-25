@@ -10,6 +10,8 @@ func _ready():
 		$AnimatedSprite.flip_h=true
 	$Edge_detect.position.x = $CollisionShape2D.shape.get_extents().x * direction
 	$Edge_detect.enabled = detects_cliffs
+	if detects_cliffs:
+		set_modulate(Color(0.5,0.5,1,1))
 	
 func _physics_process(delta):
 	if is_on_wall() or not $Edge_detect.is_colliding() and detects_cliffs and is_on_floor():

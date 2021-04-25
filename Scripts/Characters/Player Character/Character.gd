@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 var coins=0
+var health = 3
 
 var speed
 const maxspeed=200
@@ -10,6 +11,7 @@ var jumpForce=600
 var wall_direction=1
 var can_jump=false
 var wall_jump=true
+
 
 
 var velocity=Vector2(0,0)
@@ -90,13 +92,15 @@ func _physics_process(delta):
 	else:
 			velocity.y+=gravity	
 	
+	if health<=0:	
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 
 
 
 	#fallzone
 func _on_Fallzone_body_entered(body):
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 #bounce after kill
 func bounce():
@@ -121,6 +125,7 @@ func hit(var eposx):
 	Input.action_release("Left")
 	Input.action_release("Right")
 	#Subtract health amount before timer ends
+	health=health-1
 	
 func _on_Timer_timeout():
 	set_modulate(Color(1,1,1,1))

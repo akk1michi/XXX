@@ -16,7 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="XXX"
-run/main_scene="res://Scenes/TestScene.tscn"
+run/main_scene="res://Scenes/TitleMenu.tscn"
+config/main_scene="res://Scenes/TitleMenu.tscn"
 
 [input]
 
