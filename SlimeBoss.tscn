@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue_squished.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue.png" type="Texture" id=2]
-[ext_resource path="res://Slime.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue_2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Slime_boss/bigslime_1.png" type="Texture" id=2]
+[ext_resource path="res://SlimeBoss.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Characters/Slime_boss/bigslime.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue_squished_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Slime_boss/bigslime_2.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,38 +14,42 @@ animations = [ {
 "name": "Damaged",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 30 )
+extents = Vector2( 32.9541, 130.369 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19.25, 3.5 )
+extents = Vector2( 84.9332, 8.32078 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 26.9417, 4.90276 )
+extents = Vector2( 116.054, 4.90276 )
 
-[node name="Slime" type="KinematicBody2D"]
+[node name="SlimeBoss" type="KinematicBody2D"]
 collision_layer = 2147483680
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.33371, -7.49944 )
+position = Vector2( -125.787, -103.318 )
+scale = Vector2( 2.62084, 2.62084 )
 frames = SubResource( 1 )
 animation = "Walk"
+frame = 1
 playing = true
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.33371, -2.60899 )
+position = Vector2( -0.0408928, -18.3412 )
 rotation = 1.5708
 scale = Vector2( 1.022, 0.804 )
 shape = SubResource( 2 )
 
 [node name="Edge_detect" type="RayCast2D" parent="."]
+position = Vector2( 0, 5 )
 enabled = true
 cast_to = Vector2( 0, 15 )
 collision_mask = 2
@@ -53,14 +58,14 @@ collision_mask = 2
 collision_layer = 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Attack_check"]
-position = Vector2( 0.25, -16.25 )
+position = Vector2( 0.36441, -59.872 )
 shape = SubResource( 3 )
 
 [node name="Sides_check" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Sides_check"]
-position = Vector2( 0.33371, -2.00226 )
+position = Vector2( 2.2066, -17.3599 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]

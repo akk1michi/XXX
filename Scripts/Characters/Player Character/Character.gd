@@ -45,8 +45,7 @@ func _physics_process(delta):
 	else:
 		$AnimationTree.get("parameters/playback").travel("Idle")
 		
-	
-	
+
 			
 	
 #	elif face==true:
@@ -98,9 +97,13 @@ func _physics_process(delta):
 
 
 
-	#fallzone
+#fallzone
 func _on_Fallzone_body_entered(body):
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
+#lvl change
+func _on_lvl1_end_body_entered(body):
+	print("you did it!")
 
 #bounce after kill
 func bounce():
@@ -112,6 +115,12 @@ func bounce():
 #coin
 func add_coin():
 	coins=coins+1
+
+#heart
+func add_health():
+	health=health+2
+	if health >=6:
+		health=6
 
 #hit
 func hit(var eposx):

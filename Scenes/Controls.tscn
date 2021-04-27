@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Menu Assets/Lightmorning.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Controls.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Menu Assets/Controls.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Willows/3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Stones/1.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -24,20 +27,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="3" type="Sprite" parent="ColorRect"]
+position = Vector2( 712, 96 )
+scale = Vector2( 6.06421, 6.06421 )
+texture = ExtResource( 4 )
+
+[node name="1" type="Sprite" parent="ColorRect"]
+position = Vector2( 728, 518.75 )
+scale = Vector2( 2.5339, 2.5339 )
+texture = ExtResource( 5 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 296.0
-margin_top = 192.0
-margin_right = 648.0
-margin_bottom = 285.0
+visible = false
+margin_left = 264.0
+margin_top = 152.0
+margin_right = 736.0
+margin_bottom = 352.0
 custom_fonts/font = SubResource( 1 )
-text = "Put controls here
-Make a timer that sends
-a player to the lvl 1 after
-3 to 4 seconds"
+text = "W Jump
+A Left D right
+"
+align = 1
+valign = 1
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Controls" type="Sprite" parent="."]
+position = Vector2( 288, 432 )
+scale = Vector2( 3.59066, 3.59066 )
+texture = ExtResource( 3 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=122 format=2]
+[gd_resource type="TileSet" load_steps=123 format=2]
 
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tile_01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tile_02.png" type="Texture" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tile_58.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tile_59.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tile_60.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tileset_dark.png" type="Texture" id=61]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/1 Tiles/Tileset.png" type="Texture" id=62]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -1540,3 +1541,52 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 78/shape_one_way_margin = 0.0
 78/shapes = [  ]
 78/z_index = 0
+81/name = "Tileset.png 81"
+81/texture = ExtResource( 62 )
+81/tex_offset = Vector2( 0, 0 )
+81/modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+81/region = Rect2( 224, 128, 32, 32 )
+81/tile_mode = 0
+81/occluder_offset = Vector2( 0, 0 )
+81/navigation_offset = Vector2( 0, 0 )
+81/shape_offset = Vector2( 0, 0 )
+81/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+81/shape_one_way = false
+81/shape_one_way_margin = 0.0
+81/shapes = [  ]
+81/z_index = 0
+83/name = "Tileset.png 83"
+83/texture = ExtResource( 62 )
+83/tex_offset = Vector2( 0, 0 )
+83/modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+83/region = Rect2( 32, 32, 32, 32 )
+83/tile_mode = 0
+83/occluder_offset = Vector2( 0, 0 )
+83/navigation_offset = Vector2( 0, 0 )
+83/shape_offset = Vector2( 0, 0 )
+83/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+83/shape_one_way = false
+83/shape_one_way_margin = 0.0
+83/shapes = [  ]
+83/z_index = 0
+84/name = "Tileset_dark.png 84"
+84/texture = ExtResource( 61 )
+84/tex_offset = Vector2( 0, 0 )
+84/modulate = Color( 1, 1, 1, 1 )
+84/region = Rect2( 0, 0, 320, 192 )
+84/tile_mode = 2
+84/autotile/icon_coordinate = Vector2( 0, 0 )
+84/autotile/tile_size = Vector2( 32, 32 )
+84/autotile/spacing = 0
+84/autotile/occluder_map = [  ]
+84/autotile/navpoly_map = [  ]
+84/autotile/priority_map = [  ]
+84/autotile/z_index_map = [  ]
+84/occluder_offset = Vector2( 0, 0 )
+84/navigation_offset = Vector2( 0, 0 )
+84/shape_offset = Vector2( 0, 0 )
+84/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+84/shape_one_way = false
+84/shape_one_way_margin = 0.0
+84/shapes = [  ]
+84/z_index = 0
