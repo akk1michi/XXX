@@ -315,7 +315,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 3.247 )
 scale = Vector2( 1, 1.03241 )
-texture = ExtResource( 19 )
+texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.707901, 3.77549 )

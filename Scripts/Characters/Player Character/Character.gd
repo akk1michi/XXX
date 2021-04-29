@@ -5,12 +5,18 @@ var coins=0
 onready var health = 6
 
 var speed
-const maxspeed=200
+const maxspeed=250
 var gravity=30
 var jumpForce=600
 var wall_direction=1
-var can_jump=false
-var wall_jump=true
+#var can_jump=false
+#var wall_jump=true
+
+var stopping_friction = 0.6
+var running_friction = 0.9
+var can_dash=false
+var dash_direction= Vector2(0,0)
+var dashing=false
 
 
 
@@ -18,6 +24,21 @@ var velocity=Vector2(0,0)
 var input_x=1
 var face=true
 func _physics_process(delta):
+	
+	velocity = move_and_slide(velocity,Vector2.UP)
+	
+	run(delta)
+	jump()
+	
+	
+	
+	if health<=0:	
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
+
+#running
+func run(delta):
+	
 	if velocity.x>0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
@@ -30,7 +51,6 @@ func _physics_process(delta):
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
-		
 	
 	if Input.is_action_pressed("Right"):
 		$AnimationTree.get("parameters/playback").travel("Run")
@@ -45,41 +65,22 @@ func _physics_process(delta):
 	else:
 		$AnimationTree.get("parameters/playback").travel("Idle")
 		
+		
 
-			
-	
-#	elif face==true:
-#		$AnimationPlayer.play("Idle_Right")
-#	else:
-#		$AnimationPlayer.play("Idle_Left")
-	
+#jumping and 1 way platforms
+func jump():
 	if Input.is_action_pressed("Down"):
 		set_collision_mask_bit(2,false)
 	else:
 		set_collision_mask_bit(2,true)
 	if !is_on_floor():
 		$AnimationTree.get("parameters/playback").travel("JumpLoop")
-		
+
 	if Input.is_action_pressed("Jump")&&is_on_floor():
+
 			velocity.y=-jumpForce
 			
-	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce
-		velocity.x=-(maxspeed+500)
-		Input.action_release("Right")
-	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce
-		velocity.x=maxspeed+500
-		Input.action_release("Left")
-		
-				
-		
-		
-#	if Input.is_action_pressed("Jump") and is_on_floor(): #hold down jump to repeatedly jump, feels nicer to platform
-#		velocity.y=-jumpForce  
-	velocity = move_and_slide(velocity,Vector2.UP)
-	#if is_on_floor()
-		#velocity.y+=gravity
+
 	velocity.x=lerp(velocity.x,0,0.2)
 
 	if !is_on_floor()&&is_on_wall() &&(Input.is_action_pressed("Right")||Input.is_action_pressed("Left")):
@@ -90,9 +91,16 @@ func _physics_process(delta):
 			velocity.y+=gravity
 	else:
 			velocity.y+=gravity	
-	
-	if health<=0:	
-		get_tree().change_scene("res://Scenes/GameOver.tscn")
+			
+	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		velocity.y=-jumpForce
+		velocity.x=-maxspeed
+		#Input.action_release("Right")
+	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		velocity.y=-jumpForce
+		velocity.x=maxspeed
+		#Input.action_release("Left")
+
 
 
 
@@ -138,4 +146,9 @@ func hit(var eposx):
 	
 func _on_Timer_timeout():
 	set_modulate(Color(1,1,1,1))
+	
+#exit game
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 	
