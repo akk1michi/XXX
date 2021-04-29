@@ -17,6 +17,7 @@ var running_friction = 0.9
 var can_dash=false
 var dash_direction= Vector2(0,0)
 var dashing=false
+var walljump_amount = 2 #limit the amout of walljumps to two somehow
 
 
 
@@ -93,12 +94,13 @@ func jump():
 			velocity.y+=gravity	
 			
 	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce
-		velocity.x=-maxspeed
+		velocity.y=-jumpForce/3
+		velocity.x=-(maxspeed+500)
 		#Input.action_release("Right")
+		
 	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce
-		velocity.x=maxspeed
+		velocity.y=-jumpForce/3
+		velocity.x=(maxspeed+500)
 		#Input.action_release("Left")
 
 
@@ -111,7 +113,7 @@ func _on_Fallzone_body_entered(body):
 	
 #lvl change
 func _on_lvl1_end_body_entered(body):
-	print("you did it!")
+	get_tree().change_scene("res://Scenes/TitleMenu.tscn")
 
 #bounce after kill
 func bounce():
