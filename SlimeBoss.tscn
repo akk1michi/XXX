@@ -38,7 +38,6 @@ position = Vector2( -125.787, -103.318 )
 scale = Vector2( 2.62084, 2.62084 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
 playing = true
 centered = false
 

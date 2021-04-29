@@ -80,7 +80,8 @@ func jump():
 	if Input.is_action_pressed("Jump")&&is_on_floor():
 
 			velocity.y=-jumpForce
-			
+	if is_on_floor():
+		walljump_amount=2
 
 	velocity.x=lerp(velocity.x,0,0.2)
 
@@ -94,14 +95,20 @@ func jump():
 			velocity.y+=gravity	
 			
 	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce/3
+		velocity.y=-jumpForce
 		velocity.x=-(maxspeed+500)
-		#Input.action_release("Right")
+		walljump_amount = walljump_amount-1
+		if walljump_amount <=0:
+			Input.action_release("Right")
+			walljump_amount =2
 		
 	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
-		velocity.y=-jumpForce/3
+		velocity.y=-jumpForce
 		velocity.x=(maxspeed+500)
-		#Input.action_release("Left")
+		walljump_amount = walljump_amount-1
+		if walljump_amount <=0:
+			Input.action_release("Left")
+			walljump_amount = 2
 
 
 

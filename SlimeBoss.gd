@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var speed = 50
 var velocity = Vector2()
-var boss_health = 3
+var boss_health = 9
 export var direction = -1
 export var detects_cliffs=true
 
@@ -32,7 +32,7 @@ func _physics_process(delta):
 func _on_Attack_check_body_entered(body):
 
 	boss_health=boss_health-1
-	
+	body.bounce()
 	
 	if boss_health==0:
 		$AnimatedSprite.play("Damaged")
