@@ -8,4 +8,4 @@ func _ready():
 	
 func _on_Timer_timeout():
 	set_modulate(Color(0,0,0,1))
-	get_tree().change_scene("res://Scenes/Lvl1.tscn")
+	get_tree().change_scene("res://BeforeLvl1.tscn")
