@@ -120,7 +120,7 @@ func _on_Fallzone_body_entered(body):
 	
 #lvl change
 func _on_lvl1_end_body_entered(body):
-	get_tree().change_scene("res://Scenes/Lvl2.tscn")
+	get_tree().change_scene("res://BeforeLvl2.tscn")
 
 #bounce after kill
 func bounce():
