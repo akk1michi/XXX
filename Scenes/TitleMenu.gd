@@ -13,6 +13,8 @@ func _input(event):
 
 func _on_PlayButton_pressed():
 	
+	$ConfirmSound.play()
+	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://Scenes/Controls.tscn")
 	
 
@@ -20,7 +22,10 @@ func _on_PlayButton_pressed():
 
 func _on_LevelButton_pressed():
 	pass # Replace with function body.
-
+	$ConfirmSound.play()
+	yield(get_tree().create_timer(0.5), "timeout")
 
 func _on_CreditsButton_pressed():
 	pass # Replace with function body.
+	$ConfirmSound.play()
+	yield(get_tree().create_timer(0.5), "timeout")

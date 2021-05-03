@@ -12,12 +12,13 @@ var wall_direction=1
 #var can_jump=false
 #var wall_jump=true
 
+
 var stopping_friction = 0.6
 var running_friction = 0.9
 var can_dash=false
 var dash_direction= Vector2(0,0)
 var dashing=false
-var walljump_amount = 2 #limit the amout of walljumps to two somehow
+var walljump_amount = 2 #limit the amout of walljumps to two 
 
 
 
@@ -77,8 +78,8 @@ func jump():
 	if !is_on_floor():
 		$AnimationTree.get("parameters/playback").travel("JumpLoop")
 
-	if Input.is_action_pressed("Jump")&&is_on_floor():
-
+	if Input.is_action_just_pressed("Jump")&&is_on_floor():
+			$JumpSound.play()
 			velocity.y=-jumpForce
 	if is_on_floor():
 		walljump_amount=2
@@ -95,22 +96,25 @@ func jump():
 			velocity.y+=gravity	
 			
 	if is_on_wall() && Input.is_action_pressed("Right")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		$JumpSound.play()
 		velocity.y=-jumpForce
 		velocity.x=-(maxspeed+500)
 		walljump_amount = walljump_amount-1
+		
 		if walljump_amount <=0:
 			Input.action_release("Right")
 			walljump_amount =2
 		
 	elif is_on_wall() && Input.is_action_pressed("Left")&&!is_on_floor()&&Input.is_action_just_pressed("Jump"):
+		$JumpSound.play()
 		velocity.y=-jumpForce
 		velocity.x=(maxspeed+500)
 		walljump_amount = walljump_amount-1
 		if walljump_amount <=0:
 			Input.action_release("Left")
 			walljump_amount = 2
-
-
+	
+	
 
 
 
