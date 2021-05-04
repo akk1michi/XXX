@@ -30,6 +30,7 @@ func _physics_process(delta):
 
 func _on_Attack_check_body_entered(body):
 		$AnimatedSprite.play("Damaged")
+		$DeathSound.play()
 		speed = 0
 		set_collision_layer_bit(5,false)
 		set_collision_mask_bit(0,false)

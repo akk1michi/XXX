@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/squish.ogg-d9742f9879117f1e6b86e6c8565b5055.oggstr"
+
+[deps]
+
+source_file="res://Assets/sounds/squish.ogg"
+dest_files=[ "res://.import/squish.ogg-d9742f9879117f1e6b86e6c8565b5055.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

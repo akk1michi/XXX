@@ -145,6 +145,7 @@ func add_health():
 
 #hit
 func hit(var eposx):
+	$HitSound.play()
 	$Timer.start()
 	set_modulate(Color(1,0.2,0.2,0.3))
 	velocity.y=-jumpForce*0.6

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/4 Animated objects/coin_1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/4 Animated objects/coin_2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/4 Animated objects/coin_3.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Placeholder_Tiles_Objects/4 Animated objects/coin_4.png" type="Texture" id=4]
 [ext_resource path="res://Coin.gd" type="Script" id=5]
+[ext_resource path="res://Assets/sounds/powerUp2.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.64315
@@ -67,11 +68,15 @@ shape = SubResource( 1 )
 position = Vector2( 0, 2.5 )
 frames = SubResource( 2 )
 animation = "New Anim"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Bounce"
 anims/Bounce = SubResource( 3 )
 anims/fade = SubResource( 4 )
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

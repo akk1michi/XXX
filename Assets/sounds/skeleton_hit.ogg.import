@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/skeleton_hit.ogg-cb3e09de5ae5dc858e8122d34682956d.oggstr"
+
+[deps]
+
+source_file="res://Assets/sounds/skeleton_hit.ogg"
+dest_files=[ "res://.import/skeleton_hit.ogg-cb3e09de5ae5dc858e8122d34682956d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

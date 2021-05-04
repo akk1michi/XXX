@@ -9,6 +9,7 @@ signal coin_collected
 
 func _on_Coin_body_entered(body):
 	$AnimationPlayer.play("fade")
+	$SoundPickup.play()
 	body.add_coin()
 	emit_signal("coin_collected")
 	set_collision_mask_bit(0,0) #disable mask for no double coin pickup

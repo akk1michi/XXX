@@ -100,14 +100,14 @@ animations = [ {
 "name": "Empty heart",
 "speed": 4.99
 }, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "Half heart",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "Full heart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "Half heart",
 "speed": 5.0
 } ]
 
@@ -149,6 +149,7 @@ position = Vector2( 418.607, 386.08 )
 script = ExtResource( 23 )
 
 [node name="Panel" type="Panel" parent="HUD"]
+visible = false
 margin_left = 11.0
 margin_top = 10.0
 margin_right = 170.0
@@ -162,7 +163,7 @@ __meta__ = {
 position = Vector2( 31.519, 35.0212 )
 scale = Vector2( 2.5892, 2.66114 )
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="X" type="Label" parent="HUD"]
