@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var coins=0
 onready var health = 6
-
+var is_boss_dead =false
 var speed
 const maxspeed=250
 var gravity=30
@@ -124,7 +124,8 @@ func _on_Fallzone_body_entered(body):
 	
 #lvl change
 func _on_lvl1_end_body_entered(body):
-	get_tree().change_scene("res://BeforeLvl2.tscn")
+	if (is_boss_dead==true):
+		get_tree().change_scene("res://BeforeLvl2.tscn")
 
 #bounce after kill
 func bounce():
@@ -166,3 +167,7 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
+
+
+func _on_SlimeBoss_boss_dead():
+	is_boss_dead =true

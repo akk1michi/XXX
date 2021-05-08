@@ -163,7 +163,6 @@ __meta__ = {
 position = Vector2( 31.519, 35.0212 )
 scale = Vector2( 2.5892, 2.66114 )
 frames = SubResource( 2 )
-frame = 3
 playing = true
 
 [node name="X" type="Label" parent="HUD"]
@@ -2056,6 +2055,7 @@ position = Vector2( 7877.39, -1202.08 )
 stream = ExtResource( 65 )
 volume_db = -6.303
 autoplay = true
+[connection signal="boss_dead" from="Enemies/SlimeBoss" to="Character" method="_on_SlimeBoss_boss_dead"]
 [connection signal="body_entered" from="lvl1_end" to="Character" method="_on_lvl1_end_body_entered"]
 [connection signal="body_entered" from="Fallzone" to="Character" method="_on_Fallzone_body_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]

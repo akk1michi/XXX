@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal boss_dead
+
 var speed = 50
 var velocity = Vector2()
 
@@ -41,6 +43,7 @@ func _on_Attack_check_body_entered(body):
 	
 	
 	if boss_health==0:
+		emit_signal("boss_dead")
 		$AnimatedSprite.play("Dead")
 		#$SoundHit.play()
 		speed = 0
