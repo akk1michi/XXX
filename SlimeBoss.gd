@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 var speed = 50
 var velocity = Vector2()
+
 var boss_health = 9
+
 export var direction = -1
 export var detects_cliffs=true
 
@@ -33,15 +35,22 @@ func _on_Attack_check_body_entered(body):
 
 	boss_health=boss_health-1
 	body.bounce()
+	$SoundHit.play()
+	
+	
+	
 	
 	if boss_health==0:
-		$AnimatedSprite.play("Damaged")
+		$AnimatedSprite.play("Dead")
+		#$SoundHit.play()
 		speed = 0
 		set_collision_layer_bit(5,false)
 		set_collision_mask_bit(0,false)
 		set_collision_mask_bit(5,false)
+		set_collision_layer_bit(0,false)
 		$Attack_check.set_collision_layer_bit(0,false)
 		$Sides_check.set_collision_mask_bit(0,false)
+		
 		$Timer.start()
 		body.bounce()
 
@@ -54,3 +63,6 @@ func _on_Sides_check_body_entered(body):
 func _on_Timer_timeout():
 	if boss_health==0:
 		queue_free()
+		
+
+

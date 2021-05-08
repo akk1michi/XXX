@@ -1,16 +1,42 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Menu Assets/Lightmorning.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Controls.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Menu Assets/Controls.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Willows/3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Placeholder_Tiles_Objects/3 Objects/Stones/1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_6.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Right_3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_4.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
 
 [node name="Controls" type="Control"]
 anchor_right = 1.0
@@ -21,21 +47,12 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -8.0
 margin_right = 1024.0
-margin_bottom = 592.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="3" type="Sprite" parent="ColorRect"]
-position = Vector2( 712, 96 )
-scale = Vector2( 6.06421, 6.06421 )
-texture = ExtResource( 4 )
-
-[node name="1" type="Sprite" parent="ColorRect"]
-position = Vector2( 728, 518.75 )
-scale = Vector2( 2.5339, 2.5339 )
-texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -58,7 +75,22 @@ __meta__ = {
 wait_time = 2.0
 
 [node name="Controls" type="Sprite" parent="."]
-position = Vector2( 288, 432 )
-scale = Vector2( 3.59066, 3.59066 )
+position = Vector2( 512, 300 )
+scale = Vector2( 3.17544, 3.18338 )
 texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 176, 242 )
+scale = Vector2( 2.30508, 2.4127 )
+frames = SubResource( 2 )
+frame = 4
+playing = true
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 712, 328 )
+scale = Vector2( 2.26059, 2.47619 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,27 +1,30 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue_squished.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Slime_boss/death_anim/2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/Slime_boss/bigslime_1.png" type="Texture" id=2]
 [ext_resource path="res://SlimeBoss.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Characters/Slime_boss/bigslime.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/Slime_Test/slimeBlue_squished_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Slime_boss/death_anim/3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/Slime_boss/bigslime_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sounds/squish.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Characters/Slime_boss/death_anim/4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Slime_boss/death_anim/1.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "Damaged",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.9541, 130.369 )
+extents = Vector2( 32.2836, 107.914 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 84.9332, 8.32078 )
@@ -34,26 +37,30 @@ collision_layer = 2147483680
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -125.787, -103.318 )
-scale = Vector2( 2.62084, 2.62084 )
+position = Vector2( -210.842, -115.223 )
+scale = Vector2( 2.24359, 2.14306 )
+z_as_relative = false
 frames = SubResource( 1 )
 animation = "Walk"
+frame = 1
 playing = true
 centered = false
+offset = Vector2( -0.252, -2.954 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0408928, -18.3412 )
+position = Vector2( -106.088, -59.6762 )
 rotation = 1.5708
 scale = Vector2( 1.022, 0.804 )
 shape = SubResource( 2 )
 
 [node name="Edge_detect" type="RayCast2D" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( -106.186, -37.0024 )
 enabled = true
 cast_to = Vector2( 0, 15 )
 collision_mask = 2
 
 [node name="Attack_check" type="Area2D" parent="."]
+position = Vector2( -106.186, -42.0024 )
 collision_layer = 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Attack_check"]
@@ -61,6 +68,7 @@ position = Vector2( 0.36441, -59.872 )
 shape = SubResource( 3 )
 
 [node name="Sides_check" type="Area2D" parent="."]
+position = Vector2( -106.186, -42.0024 )
 collision_layer = 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Sides_check"]
@@ -70,6 +78,9 @@ shape = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="SoundHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="body_entered" from="Attack_check" to="." method="_on_Attack_check_body_entered"]
 [connection signal="body_entered" from="Sides_check" to="." method="_on_Sides_check_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

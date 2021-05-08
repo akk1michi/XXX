@@ -95,20 +95,20 @@ font_data = ExtResource( 22 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "Empty heart",
-"speed": 4.99
+"name": "Half heart",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "Full heart",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
 "loop": true,
-"name": "Half heart",
-"speed": 5.0
+"name": "Empty heart",
+"speed": 4.99
 } ]
 
 [sub_resource type="TileSet" id=6]
@@ -1542,7 +1542,7 @@ tile_data = PoolIntArray( -4259727, -1073741815, 0, -4259726, -1073741815, 0, -4
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="SlimeBoss" parent="Enemies" instance=ExtResource( 33 )]
-position = Vector2( 11014.2, -439.98 )
+position = Vector2( 11128.8, -394.233 )
 detects_cliffs = false
 
 [node name="Slime" parent="Enemies" instance=ExtResource( 25 )]
@@ -1553,6 +1553,7 @@ position = Vector2( 1354.84, -83.7618 )
 detects_cliffs = false
 
 [node name="Slime2" parent="Enemies" instance=ExtResource( 25 )]
+visible = false
 position = Vector2( 181.501, 21.2506 )
 direction = 1
 
@@ -1626,21 +1627,26 @@ editor_draw_limits = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Blue Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_mirroring = Vector2( 1024, 700 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Blue Sky"]
+visible = false
 
 [node name="6" type="Sprite" parent="ParallaxBackground/Blue Sky/Sprite"]
+visible = false
 position = Vector2( -1.13687e-13, -1.18921 )
 scale = Vector2( 1.77778, 2.19907 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 2000, 0 )
 
 [node name="Clouds" type="Sprite" parent="ParallaxBackground/Clouds"]
+visible = false
 position = Vector2( -296, -464 )
 scale = Vector2( 1.45169, 1.83851 )
 texture = ExtResource( 14 )
@@ -1651,7 +1657,7 @@ motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="5" type="Sprite" parent="ParallaxBackground/Nearby Swamp"]
-position = Vector2( -16, 16 )
+position = Vector2( -16, 14.3653 )
 scale = Vector2( 1.19444, 1.38272 )
 texture = ExtResource( 19 )
 centered = false
