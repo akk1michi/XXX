@@ -126,6 +126,10 @@ func _on_Fallzone_body_entered(body):
 func _on_lvl1_end_body_entered(body):
 	if (is_boss_dead==true):
 		get_tree().change_scene("res://BeforeLvl2.tscn")
+		
+func _on_lvl2_end_body_entered(body):
+	print("working!")
+	get_tree().change_scene("res://GameFinished.tscn")
 
 #bounce after kill
 func bounce():
@@ -168,6 +172,6 @@ func _input(event):
 		get_tree().quit()
 	
 
-
 func _on_SlimeBoss_boss_dead():
 	is_boss_dead =true
+

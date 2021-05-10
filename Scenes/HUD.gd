@@ -47,3 +47,4 @@ func _on_coin_collected():
 func _on_damage_taken():
 	health = health - 1
 	_ready()
+
