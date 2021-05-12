@@ -42,7 +42,7 @@ func _physics_process(delta):
 
 func _on_coin_collected():
 	coins = coins + 10
-	_ready()
+	_ready() 
 
 func _on_damage_taken():
 	health = health - 1

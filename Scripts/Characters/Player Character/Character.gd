@@ -128,7 +128,7 @@ func _on_lvl1_end_body_entered(body):
 		get_tree().change_scene("res://BeforeLvl2.tscn")
 		
 func _on_lvl2_end_body_entered(body):
-	print("working!")
+	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().change_scene("res://GameFinished.tscn")
 
 #bounce after kill
