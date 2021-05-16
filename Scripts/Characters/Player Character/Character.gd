@@ -30,7 +30,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	run(delta)
+	attack()
 	jump()
+	
 	
 	
 	
@@ -47,13 +49,15 @@ func run(delta):
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
+		$AnimationTree.set("parameters/Attack/blend_position",input_x)
 	elif velocity.x<0:
 		$AnimationTree.set("parameters/Idle/blend_position",input_x)
 		$AnimationTree.set("parameters/Run/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpStart/blend_position",input_x)
 		$AnimationTree.set("parameters/JumpLoop/blend_position",input_x)
 		$AnimationTree.set("parameters/Wall/blend_position",input_x)
-	
+		$AnimationTree.set("parameters/Attack/blend_position",input_x)
+
 	if Input.is_action_pressed("Right"):
 		$AnimationTree.get("parameters/playback").travel("Run")
 		face=true
@@ -65,9 +69,15 @@ func run(delta):
 		velocity.x=-maxspeed
 		input_x=-1
 	else:
-		$AnimationTree.get("parameters/playback").travel("Idle")
+			$AnimationTree.get("parameters/playback").travel("Idle")
+			
 		
 		
+
+func attack():
+	if Input.is_action_just_pressed("Attack") && !(!is_on_floor()||Input.is_action_pressed("Left")||Input.is_action_pressed("Right")):
+		print("attack")
+		$AnimationTree.get("parameters/playback").travel("Attack")
 
 #jumping and 1 way platforms
 func jump():
