@@ -41,6 +41,9 @@ func _on_Attack_check_body_entered(body):
 		$Timer.start()
 		body.bounce()
 
+
+
+
 func _on_Sides_check_body_entered(body):
 		print("Got it!")
 		body.hit(position.x)
@@ -49,3 +52,16 @@ func _on_Sides_check_body_entered(body):
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+func _on_Attack_check_area_entered(area):
+	$AnimatedSprite.play("Damaged")
+	$DeathSound.play()
+	speed = 0
+	set_collision_layer_bit(5,false)
+	set_collision_mask_bit(0,false)
+	set_collision_mask_bit(5,false)
+	$Attack_check.set_collision_layer_bit(0,false)
+	$Sides_check.set_collision_mask_bit(0,false)
+		
+

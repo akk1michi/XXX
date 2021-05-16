@@ -71,6 +71,7 @@ one_shot = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+[connection signal="area_entered" from="Attack_check" to="." method="_on_Attack_check_area_entered"]
 [connection signal="body_entered" from="Attack_check" to="." method="_on_Attack_check_body_entered"]
 [connection signal="body_entered" from="Sides_check" to="." method="_on_Sides_check_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

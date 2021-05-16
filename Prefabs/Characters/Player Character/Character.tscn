@@ -48,7 +48,7 @@
 [ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Attack_Left_1.png" type="Texture" id=46]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 4.48911 )
+extents = Vector2( 21.5592, 4.48911 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 14.5636
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 46 ), ExtResource( 45 ), ExtResource( 41 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/SwordHit/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -82,7 +82,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Area2D/CollisionShape2D:position")
+tracks/2/path = NodePath("Sprite/SwordHit/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -111,7 +111,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite/SwordHit/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -123,7 +123,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Area2D/CollisionShape2D:position")
+tracks/2/path = NodePath("Sprite/SwordHit/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -383,11 +383,11 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
 
 [sub_resource type="AnimationNodeStateMachine" id=43]
 states/Attack/node = SubResource( 17 )
@@ -402,7 +402,7 @@ states/Run/node = SubResource( 29 )
 states/Run/position = Vector2( 398, 110 )
 states/Wall/node = SubResource( 32 )
 states/Wall/position = Vector2( 580, 267 )
-transitions = [ "Run", "Idle", SubResource( 33 ), "Idle", "JumpStart", SubResource( 34 ), "Run", "JumpStart", SubResource( 35 ), "JumpStart", "JumpLoop", SubResource( 36 ), "JumpStart", "Wall", SubResource( 37 ), "Wall", "JumpLoop", SubResource( 38 ), "JumpLoop", "Wall", SubResource( 39 ), "Run", "Wall", SubResource( 40 ), "Attack", "Idle", SubResource( 45 ), "Idle", "Attack", SubResource( 47 ) ]
+transitions = [ "Run", "Idle", SubResource( 33 ), "Idle", "JumpStart", SubResource( 34 ), "Run", "JumpStart", SubResource( 35 ), "JumpStart", "JumpLoop", SubResource( 36 ), "JumpStart", "Wall", SubResource( 37 ), "Wall", "JumpLoop", SubResource( 38 ), "JumpLoop", "Wall", SubResource( 39 ), "Run", "Wall", SubResource( 40 ), "Attack", "Idle", SubResource( 41 ), "Idle", "Attack", SubResource( 42 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -44, -30 )
 
@@ -419,12 +419,12 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 3.247 )
 scale = Vector2( 1, 1.03241 )
-texture = ExtResource( 19 )
+texture = ExtResource( 14 )
 
-[node name="Area2D" type="Area2D" parent="Sprite"]
+[node name="SwordHit" type="Area2D" parent="Sprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
-position = Vector2( -20, 0 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/SwordHit"]
+position = Vector2( 20, 0 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -467,4 +467,5 @@ volume_db = -18.122
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 40 )
+[connection signal="area_entered" from="Sprite/SwordHit" to="." method="_on_SwordHit_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

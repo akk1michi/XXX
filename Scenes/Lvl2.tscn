@@ -57,15 +57,15 @@ animations = [ {
 "name": "Half heart",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "Full heart",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Empty heart",
 "speed": 4.99
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "Full heart",
+"speed": 5.0
 } ]
 
 [sub_resource type="TileSet" id=6]
@@ -845,7 +845,7 @@ __meta__ = {
 position = Vector2( 31.519, 35.0212 )
 scale = Vector2( 2.5892, 2.66114 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="X" type="Label" parent="HUD"]
@@ -932,196 +932,193 @@ scale = Vector2( 1.04121, 1.01254 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 246.145, -62.6195 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 613.178, -62.3044 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 1074.79, -63.489 )
 frames = SubResource( 41 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 1320.91, -63.0228 )
 frames = SubResource( 41 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2580.77, -504.926 )
 frames = SubResource( 41 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2611.44, -664.316 )
 frames = SubResource( 41 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2457.54, -979.091 )
 frames = SubResource( 41 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2396.15, -1169.36 )
 frames = SubResource( 41 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2611.76, -1138.12 )
 frames = SubResource( 41 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2888.61, -1104.52 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3289.24, -1103.2 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3258, -851.197 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2980.92, -883.294 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 2948.5, -629.999 )
 frames = SubResource( 41 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3196.84, -662.385 )
 frames = SubResource( 41 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3381.38, -600.102 )
 frames = SubResource( 41 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3686.75, -506.398 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3840.73, -538.311 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3686.24, -788.149 )
 frames = SubResource( 41 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimatedSprite20" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3657.63, -979.829 )
 frames = SubResource( 41 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3657.63, -1138.9 )
 frames = SubResource( 41 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite22" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 3841.1, -1137.42 )
 frames = SubResource( 41 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 4117.78, -693.697 )
 frames = SubResource( 41 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite24" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 4455.07, -536.733 )
 frames = SubResource( 41 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 4517.88, -852.988 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite26" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 5193.08, -883.639 )
 frames = SubResource( 41 )
-frame = 7
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 5129.45, -537.255 )
 frames = SubResource( 41 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="AnimatedSprite28" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 5653.6, -93.0017 )
 frames = SubResource( 41 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="AnimatedSprite30" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 6115.64, -159.871 )
 frames = SubResource( 41 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="AnimatedSprite31" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 6391.16, -32.291 )
 frames = SubResource( 41 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="AnimatedSprite33" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 6820.86, 33.0173 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite32" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 6669.24, -126.437 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="TileMaps/AnimFires"]
 position = Vector2( 6054.04, 31.0593 )
 frames = SubResource( 41 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -1218,7 +1215,7 @@ position = Vector2( 2628.39, -1016.21 )
 position = Vector2( 2664.39, -1300.21 )
 
 [node name="Character" parent="." instance=ExtResource( 26 )]
-position = Vector2( 7264.05, 116.889 )
+position = Vector2( 58.0652, -1.83987 )
 collision_mask = 63
 
 [node name="Camera2D" type="Camera2D" parent="Character"]

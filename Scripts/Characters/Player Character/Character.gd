@@ -185,3 +185,9 @@ func _input(event):
 func _on_SlimeBoss_boss_dead():
 	is_boss_dead =true
 
+
+
+
+
+func _on_SwordHit_area_entered(area):
+	pass # Replace with function body.
