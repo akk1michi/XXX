@@ -19,6 +19,10 @@ config/name="XXX"
 run/main_scene="res://Scenes/TitleMenu.tscn"
 config/main_scene="res://Scenes/TitleMenu.tscn"
 
+[autoload]
+
+global="*res://Temp/global.gd"
+
 [input]
 
 Jump={

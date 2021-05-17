@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Assets/Menu Assets/Lightmorning.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Controls.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Menu Assets/Controls.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_6.png" type="Texture" id=4]
@@ -16,13 +15,7 @@
 [ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_3.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Characters/Player_Character/Textures_1by1/Run_Left_4.png" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=1]
-size = 20
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 4 ) ],
 "loop": true,
@@ -30,7 +23,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ) ],
 "loop": true,
@@ -54,23 +47,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 264.0
-margin_top = 152.0
-margin_right = 736.0
-margin_bottom = 352.0
-custom_fonts/font = SubResource( 1 )
-text = "W Jump
-A Left D right
-"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
@@ -82,7 +58,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 176, 242 )
 scale = Vector2( 2.30508, 2.4127 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 frame = 4
 playing = true
 centered = false
@@ -90,7 +66,7 @@ centered = false
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 712, 328 )
 scale = Vector2( 2.26059, 2.47619 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 frame = 1
 playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

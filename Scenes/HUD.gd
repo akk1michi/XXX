@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-var coins = 0
 var health =0
 
 func _ready():
@@ -8,7 +7,7 @@ func _ready():
 	$Heart.play("Full heart")
 	$Heart2.play("Full heart")
 	$Heart3.play("Full heart")
-	$Score.text= String(coins)
+	$Score.text= String(global.score)
 	
 func _physics_process(delta):
 	health = $"../Character".health	
@@ -41,7 +40,8 @@ func _physics_process(delta):
 
 
 func _on_coin_collected():
-	coins = coins + 10
+	
+	global.score += 10
 	_ready() 
 
 func _on_damage_taken():
